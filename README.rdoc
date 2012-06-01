@@ -1,6 +1,24 @@
 = slicker
 
-Description goes here.
+It's raining XSS out there. Time for a slicker!
+
+Simple XSS protection was a feature of some early Rails plugins, notably WhiteList and sanitize_params, which defended your application at the front door - the params hash, where you probably get most of your input.  
+
+This is a port of the basic sanitize_params strategy into gem format, and with no dependency on Rails - it will also work in Sinatra, Padrino, or a straight Ruby application. 
+
+== Usage
+
+Using it is pretty simple. In its most basic form:
+
+    Slicker.protect(params)
+
+Drop that in your ApplicationController (for Rails) or your app.rb file (Sinatra or Padrino), and you're done: all HTML will be stripped from all params hitting your application. 
+
+Slicker depends on sanitize, so you can also pass a Sanitize config through, and strip only some tags:
+
+    Slicker.protect(params, Sanitize::Config::BASIC)
+
+See the Sanitize[https://github.com/rgrove/sanitize] documentation for more information on what you can pass.
 
 == Contributing to slicker
  
