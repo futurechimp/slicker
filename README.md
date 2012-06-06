@@ -10,15 +10,34 @@ This is a port of the basic sanitize_params strategy into gem format, and with n
 
 Using it is pretty simple. In its most basic form:
 
-    Slicker.protect(params)
+```ruby
+# Rails
+before_filter :protect_from_xss
 
-Drop that in your ApplicationController (for Rails) or your app.rb file (Sinatra or Padrino), and you're done: all HTML will be stripped from all params hitting your application. 
 
-Slicker depends on sanitize, so you can also pass a Sanitize config through, and strip only some tags:
+# Padrino
+before do
+  protect_from_xss
+end
+
+
+# Either framework
+def protect_from_xss
+  Slicker.protect(params)
+end
+```
+
+Drop that in your ApplicationController (for Rails) or your app.rb file (Sinatra or Padrino), and you're done: all HTML will be stripped from all params hitting your application. Of course, the disadvantage of this is that all HTML will be stripped from all params hitting your application. 
+
+You can loosen this up in several different ways.
+
+Slicker depends on sanitize, so you can also pass a Sanitize config through, and strip only certain tags:
 
     Slicker.protect(params, Sanitize::Config::BASIC)
 
 See the Sanitize[https://github.com/rgrove/sanitize] documentation for more information on what you can pass.
+
+Another way to loosen things up is to be a bit more selective in your filters, perhaps by using `skip_before_filter` or by not putting the filter in the superclass of the entire application.
 
 == Contributing to slicker
  
