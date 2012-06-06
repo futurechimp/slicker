@@ -1,4 +1,5 @@
-= slicker
+slicker
+-------
 
 It's raining XSS out there. Time for a slicker!
 
@@ -6,7 +7,8 @@ Simple XSS protection was a feature of some early Rails plugins, notably WhiteLi
 
 This is a port of the basic sanitize_params strategy into gem format, and with no dependency on Rails - it will also work in Sinatra, Padrino, or a straight Ruby application. 
 
-== Usage
+Usage
+=====
 
 Using it is pretty simple. In its most basic form:
 
@@ -39,8 +41,9 @@ See the Sanitize[https://github.com/rgrove/sanitize] documentation for more info
 
 Another way to loosen things up is to be a bit more selective in your filters, perhaps by using `skip_before_filter` or by not putting the filter in the superclass of the entire application.
 
-== Contributing to slicker
- 
+Contributing to slicker
+=======================
+
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
 * Fork the project
@@ -49,8 +52,8 @@ Another way to loosen things up is to be a bit more selective in your filters, p
 * Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
 * Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
 
-== Copyright
+Copyright
+=========
 
-Copyright (c) 2012 Dave Hrycyszyn. See LICENSE.txt for
-further details.
+Copyright (c) 2012 [Dave Hrycyszyn](http://www.headlondon.com/who-we-are#david-hrycyszyn), [headlondon.com](http://www.headlondon.com). See LICENSE.txt for further details.
 
