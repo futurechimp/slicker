@@ -5,7 +5,7 @@ It's raining XSS out there. Time for a slicker!
 
 Simple XSS protection was a feature of some early Rails plugins, notably WhiteList and sanitize_params, which defended your application at the front door - the params hash, where you probably get most of your input.  
 
-This is a port of the basic sanitize_params strategy into gem format, and with no dependency on Rails - it will also work in Sinatra, Padrino, or a straight Ruby application. 
+This is a port of the basic sanitize_params strategy into gem format, and with no dependency on Rails - it will also work in Sinatra, Padrino, or a straight Ruby application.
 
 Usage
 =====
@@ -29,7 +29,7 @@ def protect_from_xss
 end
 ```
 
-Drop that in your ApplicationController (for Rails) or your app.rb file (Sinatra or Padrino), and you're done: all HTML will be stripped from all params hitting your application. Of course, the disadvantage of this is that all HTML will be stripped from all params hitting your application. 
+Drop that in your ApplicationController (for Rails) or your app.rb file (Sinatra or Padrino), and you're done: all HTML will be stripped from all params hitting your application. Of course, the disadvantage of this is that all HTML will be stripped from all params hitting your application.
 
 You can loosen this up in several different ways.
 
@@ -55,5 +55,5 @@ Contributing to slicker
 Copyright
 =========
 
-Copyright (c) 2012 [Dave Hrycyszyn](http://www.headlondon.com/who-we-are#david-hrycyszyn), [headlondon.com](http://www.headlondon.com). See LICENSE.txt for further details.
+Copyright (c) 2012-2018 [Dave Hrycyszyn](http://constructiveproof.com). See LICENSE.txt for further details.
 
